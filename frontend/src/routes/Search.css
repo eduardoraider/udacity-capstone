@@ -1,0 +1,8 @@
+h1 {
+    font-size: 1.5rem;
+    margin: 1rem 0;
+}
+
+.query-term {
+    text-transform: capitalize;
+}

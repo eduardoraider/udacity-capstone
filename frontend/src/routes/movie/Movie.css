@@ -1,0 +1,101 @@
+.header-single-page {
+    padding-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.header-single-page .btn-section {
+    display: flex;
+    gap: 1rem;
+}
+
+.header-single-page h1 {
+    font-size: 1.5rem;
+    margin: 0;
+    width: 100%;
+    text-align: left;
+}
+
+.movie-image {
+    height: 480px;
+    width: 360px;
+    object-fit: cover;
+}
+
+.subheader-single-page {
+    display: flex;
+    align-items: center;
+    padding: 6px 0;
+}
+
+.subheader-single-page .separator-dot {
+    margin: 0 4px;
+}
+
+.subheader-single-page h3 {
+    margin: 0;
+    font-size: .75rem;
+}
+
+.subheader-single-page h3 .text {
+    font-weight: 400;
+}
+
+.section-title {
+    padding: 2rem 0 1rem 0;
+    font-size: 1.5rem;
+    margin: 0;
+    width: 100%;
+    text-align: left; 
+    font-weight: bold;
+}
+
+.body-single-page {
+    display: flex;
+    justify-content: space-between;
+}
+
+.section-edit-movie {
+    display: none;
+    margin-top: 60px;
+    -webkit-transition: .3s ease-out;
+    -moz-transition: .3s ease-out;
+    -o-transition: .3s ease-out;
+    transition: .3s ease-out;
+}
+
+.section-edit-movie.show {
+    display: block;
+    margin-top: 60px;
+}
+
+.section-select-casting {
+    display: none;
+    margin-top: 60px;
+    -webkit-transition: .3s ease-out;
+    -moz-transition: .3s ease-out;
+    -o-transition: .3s ease-out;
+    transition: .3s ease-out;
+}
+
+.section-select-casting.show {
+    display: block;
+    margin-top: 60px;
+}
+
+.react-select-container {
+    width: 580px;
+    border: none;
+    font-size: 0.75em;
+    padding: 0;
+    color: black;
+}
+
+.react-select-container .react-select__control {
+    border: none;
+}
+
+.react-select-container .react-select__control:focus{
+    outline: none;
+    outline: 0;
+}

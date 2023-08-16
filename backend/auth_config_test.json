@@ -1,0 +1,19 @@
+{
+    "roles": {
+        "CastingAssistant": {
+            "description": "Can view actors and movies",
+            "jwt_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjFaSjFKNGlzQ2ljeW5BY3VDdVhHUSJ9.eyJjYXN0aW5nLXJvbGUiOlsiQ2FzdGluZ0Fzc2lzdGFudCJdLCJpc3MiOiJodHRwczovL2NhcHN0b25lLXVkYWNpdHktcmFpZGVyLnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw2M2QwMTE1MTA3NGZiYzM5OTg2YTU2ZjEiLCJhdWQiOlsiY2FzdGluZyIsImh0dHBzOi8vY2Fwc3RvbmUtdWRhY2l0eS1yYWlkZXIudXMuYXV0aDAuY29tL3VzZXJpbmZvIl0sImlhdCI6MTY5MTI2MTMxOSwiZXhwIjoxNjkxMzQ3NzE5LCJhenAiOiJhSVZBRmNVM21yU3NOZW1LS2tZT0VQY0NOY29LYWhJYyIsInNjb3BlIjoib3BlbmlkIHByb2ZpbGUgZW1haWwiLCJwZXJtaXNzaW9ucyI6WyJnZXQ6YWN0b3JzIiwiZ2V0Om1vdmllcyJdfQ.GpQjkb8EebiS8FqbyvY36cIDQ_KPxuEHV89Am4vP73KyNU72nQNJyEXkeMEVFvw1FQ5iKQlmML6uw98Yl6fpI8yyZYsw2cVcYdK7lbRI1jmi1A0lTqit6crJ4x1loVfVtBdQY0qOxvMhbCiwc12AB2Gpk0Ugb3SBbjuJrMYE-LSDf58OceRKFaG1OgxE0JGgzmYHlHfoo4f831MVz4ohNeGrbsYOEnH_OrBJaMebx2UlfsXxhV1ksVSKDefLlaaVM-AAiSM4opO8DiG4G4qUUKxA9T4v0gLpPqlXhCD8LTSilzxB-mp0RfoQpKkEb9lrsTHUeejEoeL_dp8GVhUpYA",
+            "permissions": ["get:movies", "get:actors"]
+        },
+        "CastingDirector": {
+            "description": "Add or delete an actor from the database - Modify actors or movies - Add or delete casting to movies",
+            "jwt_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjFaSjFKNGlzQ2ljeW5BY3VDdVhHUSJ9.eyJjYXN0aW5nLXJvbGUiOlsiQ2FzdGluZ0RpcmVjdG9yIl0sImlzcyI6Imh0dHBzOi8vY2Fwc3RvbmUtdWRhY2l0eS1yYWlkZXIudXMuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDYzZDAxMjQ1MjkzYTk4OTIxMjJmNmE0YSIsImF1ZCI6WyJjYXN0aW5nIiwiaHR0cHM6Ly9jYXBzdG9uZS11ZGFjaXR5LXJhaWRlci51cy5hdXRoMC5jb20vdXNlcmluZm8iXSwiaWF0IjoxNjkxMjU4MDYyLCJleHAiOjE2OTEzNDQ0NjIsImF6cCI6ImFJVkFGY1UzbXJTc05lbUtLa1lPRVBjQ05jb0thaEljIiwic2NvcGUiOiJvcGVuaWQgcHJvZmlsZSBlbWFpbCIsInBlcm1pc3Npb25zIjpbImRlbGV0ZTphY3RvciIsImVkaXQ6YWN0b3IiLCJlZGl0Om1vdmllIiwiZ2V0OmFjdG9ycyIsImdldDptb3ZpZXMiLCJwb3N0OmFjdG9yIl19.qjwBF6yUGyboZH-EpS7XvWSQWEjU9oJi4g_25NmbeBcIUM9U9azXlhTZqr81xdon38qd-x_sX_3wm9oFWRLIF20V4iISJQJZIY1eC5xsRtQn1Ot9gQALqZAVrmdTKYwoJFkLBq0RwSGZHu-CUzPx_8Bco8MCL6K4N5h3sEGpxmhSQRLwahwnygJaZOu1CymDGpM4WEgcBdiquAE7GeKdaMMvK9b76Z0hH2AoIjib9hTxlB8bD8TIdBmgem8XyJHhXcM-Sl-ufbNjd7uxrin8ewzorNMkll59ydnpFyHvQxvzOqFRP4eTLLP_msPCgW5U6pX5AzC8SvW-GpM0IIaMhw",
+            "permissions": ["get:movies", "edit:movie", "get:actors", "post:actor", "edit:actor", "delete:actor", "create:casting", "delete:casting"]
+        },
+        "ExecutiveProducer": {
+            "description": "All permissions",
+            "jwt_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjFaSjFKNGlzQ2ljeW5BY3VDdVhHUSJ9.eyJjYXN0aW5nLXJvbGUiOlsiRXhlY3V0aXZlUHJvZHVjZXIiXSwiaXNzIjoiaHR0cHM6Ly9jYXBzdG9uZS11ZGFjaXR5LXJhaWRlci51cy5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NjNkMDEyN2Y4NWQ5OTViODdhN2EzZWI4IiwiYXVkIjpbImNhc3RpbmciLCJodHRwczovL2NhcHN0b25lLXVkYWNpdHktcmFpZGVyLnVzLmF1dGgwLmNvbS91c2VyaW5mbyJdLCJpYXQiOjE2OTEyNjEzOTAsImV4cCI6MTY5MTM0Nzc5MCwiYXpwIjoiYUlWQUZjVTNtclNzTmVtS0trWU9FUGNDTmNvS2FoSWMiLCJzY29wZSI6Im9wZW5pZCBwcm9maWxlIGVtYWlsIiwicGVybWlzc2lvbnMiOlsiY3JlYXRlOmNhc3RpbmciLCJkZWxldGU6YWN0b3IiLCJkZWxldGU6Y2FzdGluZyIsImRlbGV0ZTptb3ZpZSIsImVkaXQ6YWN0b3IiLCJlZGl0Om1vdmllIiwiZ2V0OmFjdG9ycyIsImdldDptb3ZpZXMiLCJwb3N0OmFjdG9yIiwicG9zdDptb3ZpZSJdfQ.Ltf8BB8VcnHJgzy5dMrC5CMkjXVnCczbc8eZuLDT0rIDNLEF5mvnllE6m2zIXVbWHjO2Iqws5RJ_Kdd1EfclioclP-MaO1GpPuIIZn7lLnVNkS05weeyC2V9ZdSTryukxz71IXVoJqJTsjUjdymqkX-ZAgSka7XvZqoxsjSRTa3WRQO9J_5k0KWcCVGb0S7JWVJ2fw7ujtZuzoJztXf48bX0ZlVwiFPdVs6T_xby_GyqY1Ggmw-QWGWG1NM_Wjj3Zo4TPa3tu4l8jvGbj075_HM8SSQpS1yLNI5tQcvsQQJr6EyLuOp6VhRjduAbCUHydGKN96MZuEEDUjDYmfrofA",
+            "permissions": ["get:movies", "post:movie", "edit:movie", "delete:movie", "get:actors", "post:actor", "edit:actor", "delete:actor", "create:casting", "delete:casting"]
+        }
+    }
+}

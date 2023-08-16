@@ -1,0 +1,22 @@
+.select {
+    -webkit-appearance: none;
+    background: #fff url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20width%3D%2220%22%20height%3D%2220%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M5%206l5%205%205-5%202%201-7%207-7-7%202-1z%22%20fill%3D%22%23fff%22%2F%3E%3C%2Fsvg%3E') no-repeat right 8px top 55%;
+}
+
+.select {
+    background-color: #212121;
+    color: #ffffff;
+    font-weight: 400 !important;
+    font-size: 0.75em !important;
+    border: 1px solid white !important;
+    padding: 0.3rem 2rem 0.3rem 1rem;
+    border-radius: 0.3rem;
+    opacity: 1;
+    text-align: center;
+    cursor: pointer;
+    margin: 0 1rem;
+}
+
+.select:hover {
+    background-color: #111111;
+}

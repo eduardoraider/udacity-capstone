@@ -1,0 +1,324 @@
+--
+-- PostgreSQL database dump
+--
+
+-- Dumped from database version 15.1
+-- Dumped by pg_dump version 15.1
+
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET idle_in_transaction_session_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SELECT pg_catalog.set_config('search_path', '', false);
+SET check_function_bodies = false;
+SET xmloption = content;
+SET client_min_messages = warning;
+SET row_security = off;
+
+SET default_tablespace = '';
+
+SET default_table_access_method = heap;
+
+--
+-- Name: actors; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.actors (
+    id integer NOT NULL,
+    name character varying(120) NOT NULL,
+    gender integer NOT NULL,
+    image_link character varying(500) NOT NULL,
+    birthdate timestamp without time zone
+);
+
+
+ALTER TABLE public.actors OWNER TO postgres;
+
+--
+-- Name: actors_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public.actors_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.actors_id_seq OWNER TO postgres;
+
+--
+-- Name: actors_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE public.actors_id_seq OWNED BY public.actors.id;
+
+
+--
+-- Name: alembic_version; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.alembic_version (
+    version_num character varying(32) NOT NULL
+);
+
+
+ALTER TABLE public.alembic_version OWNER TO postgres;
+
+--
+-- Name: castings; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.castings (
+    id integer NOT NULL,
+    actor_id integer NOT NULL,
+    movie_id integer NOT NULL
+);
+
+
+ALTER TABLE public.castings OWNER TO postgres;
+
+--
+-- Name: castings_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public.castings_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.castings_id_seq OWNER TO postgres;
+
+--
+-- Name: castings_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE public.castings_id_seq OWNED BY public.castings.id;
+
+
+--
+-- Name: movies; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.movies (
+    id integer NOT NULL,
+    title character varying(120) NOT NULL,
+    image_link character varying(500) NOT NULL,
+    release_date timestamp without time zone NOT NULL
+);
+
+
+ALTER TABLE public.movies OWNER TO postgres;
+
+--
+-- Name: movies_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public.movies_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.movies_id_seq OWNER TO postgres;
+
+--
+-- Name: movies_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE public.movies_id_seq OWNED BY public.movies.id;
+
+
+--
+-- Name: actors id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.actors ALTER COLUMN id SET DEFAULT nextval('public.actors_id_seq'::regclass);
+
+
+--
+-- Name: castings id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.castings ALTER COLUMN id SET DEFAULT nextval('public.castings_id_seq'::regclass);
+
+
+--
+-- Name: movies id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.movies ALTER COLUMN id SET DEFAULT nextval('public.movies_id_seq'::regclass);
+
+
+--
+-- Data for Name: actors; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.actors (id, name, gender, image_link, birthdate) FROM stdin;
+4	Jennifer Lawrence	2	https://static.wikia.nocookie.net/disneyfanon/images/d/d8/Jennifer_Lawrence.jpg	1990-08-15 00:00:00
+5	George Clooney	1	https://static.wikia.nocookie.net/disneyfanon/images/c/c8/George_Clooney.jpg	1961-05-06 00:00:00
+6	Nicole Kidman	2	https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Nicole_Kidman_Cannes_2017_7.jpg/424px-Nicole_Kidman_Cannes_2017_7.jpg	1967-06-20 00:00:00
+7	Brad Pitt	1	https://static.wikia.nocookie.net/disneyfanon/images/d/d5/Brad_Pitt.jpg	1963-12-18 00:00:00
+8	Anne Hathaway	2	https://static.wikia.nocookie.net/disneyfanon/images/0/07/Anne_Hathaway.jpg	1982-11-12 00:00:00
+9	Keanu Reeves	1	https://static.wikia.nocookie.net/disneyfanon/images/7/7b/Keanu_Reeves.jpg	1964-09-02 00:00:00
+10	Emily Blunt	2	https://static.wikia.nocookie.net/disneyfanon/images/2/20/Emily_Blunt.jpg	1983-02-23 00:00:00
+11	Dwayne Johnson	1	https://static.wikia.nocookie.net/disneyfanon/images/6/6a/Dwayne_Johnson.jpg	1972-05-02 00:00:00
+12	Tom Cruise	1	https://static.wikia.nocookie.net/disneyfanon/images/7/73/Tom_Cruise.jpg	1962-07-03 00:00:00
+19	Florence Pugh	2	https://static.wikia.nocookie.net/disneyfanon/images/9/97/Yelena_Belova_-_Profile.png	1996-01-03 00:00:00
+20	Sylvester Stallone	1	https://static.wikia.nocookie.net/disneyfanon/images/4/42/Sylvester_Stallone.jpg	1946-07-06 00:00:00
+21	Denzel Washington	1	https://static.wikia.nocookie.net/disneyfanon/images/3/3e/Denzel_Washington.jpg	1954-12-28 00:00:00
+23	Lupita Nyong'o	2	https://m.media-amazon.com/images/M/MV5BMTY0NTQ4MDY2Nl5BMl5BanBnXkFtZTgwNDk1MTEyMDE@._V1_QL75_UX280_CR0,4,280,414_.jpg	1983-03-01 00:00:00
+3	Julia Roberts	2	http://t1.gstatic.com/licensed-image?q=tbn:ANd9GcQr8Py-a1YU77urOYldIKEOx-5WUCj3YOR4VjUzVZmbiFt2yMfraQCE3Za_e-yC3jlFxgEeV1obtjB1Qh0	1967-10-28 00:00:00
+24	John David Washington	1	https://m.media-amazon.com/images/M/MV5BOTY4NDcyNDM5OF5BMl5BanBnXkFtZTgwMjk4Mzk0NTM@._V1_QL75_UY414_CR7,0,280,414_.jpg	1984-07-28 00:00:00
+\.
+
+
+--
+-- Data for Name: alembic_version; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.alembic_version (version_num) FROM stdin;
+d2f42f0544f1
+\.
+
+
+--
+-- Data for Name: castings; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.castings (id, actor_id, movie_id) FROM stdin;
+5	3	2
+23	3	10
+24	5	10
+43	4	5
+44	19	21
+45	20	20
+46	12	19
+47	12	18
+48	11	17
+49	11	16
+50	9	15
+51	9	14
+52	7	13
+53	7	12
+54	5	11
+55	10	9
+56	8	8
+57	10	8
+58	8	7
+59	6	6
+60	4	4
+\.
+
+
+--
+-- Data for Name: movies; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.movies (id, title, image_link, release_date) FROM stdin;
+4	The Hunger Games	https://m.media-amazon.com/images/M/MV5BMjA4NDg3NzYxMF5BMl5BanBnXkFtZTcwNTgyNzkyNw@@._V1_QL75_UX380_CR0,0,380,562_.jpg	2012-03-23 00:00:00
+5	Silver Linings Playbook	https://m.media-amazon.com/images/M/MV5BMTM2MTI5NzA3MF5BMl5BanBnXkFtZTcwODExNTc0OA@@._V1_QL75_UX380_CR0,0,380,562_.jpg	2012-12-25 00:00:00
+6	Moulin Rouge!	https://m.media-amazon.com/images/M/MV5BMTIwMjQ4MDUxMV5BMl5BanBnXkFtZTYwMjUxMTM3._V1_QL75_UY562_CR19,0,380,562_.jpg	2003-02-14 00:00:00
+7	Bride Wars	https://m.media-amazon.com/images/M/MV5BMTUyNTg2OTUwN15BMl5BanBnXkFtZTgwNzEzMzg5MTI@._V1_QL75_UX380_CR0,0,380,562_.jpg	2009-01-09 00:00:00
+8	The Devil Wears Prada	https://m.media-amazon.com/images/M/MV5BZjQ3ZTIzOTItMGNjNC00MWRmLWJlMGEtMjJmMDM5ZDIzZGM3XkEyXkFqcGdeQXVyMTkzODUwNzk@._V1_QL75_UY562_CR1,0,380,562_.jpg	2006-06-30 00:00:00
+9	The Girl on the Train	https://m.media-amazon.com/images/M/MV5BNzFlMjA0ZmUtZWI0Mi00ZGJkLTlmMmYtZmE1ODZiMjhjMGM0XkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_QL75_UX380_CR0,3,380,562_.jpg	2016-10-07 00:00:00
+11	The Midnight Sky	https://m.media-amazon.com/images/M/MV5BNDQwYjJjODMtOWNmNC00NDJjLThiNDgtNzVkOTM1MjY5NDQ5XkEyXkFqcGdeQXVyMTEyMjM2NDc2._V1_QL75_UX380_CR0,0,380,562_.jpg	2020-12-23 00:00:00
+12	Moneyball	https://m.media-amazon.com/images/M/MV5BMjAxOTU3Mzc1M15BMl5BanBnXkFtZTcwMzk1ODUzNg@@._V1_QL75_UX380_CR0,0,380,562_.jpg	2011-09-23 00:00:00
+13	Mr. & Mrs. Smith	https://m.media-amazon.com/images/M/MV5BMTUxMzcxNzQzOF5BMl5BanBnXkFtZTcwMzQxNjUyMw@@._V1_QL75_UY562_CR1,0,380,562_.jpg	2005-06-10 00:00:00
+14	The Matrix	https://m.media-amazon.com/images/M/MV5BNzQzOTk3OTAtNDQ0Zi00ZTVkLWI0MTEtMDllZjNkYzNjNTc4L2ltYWdlXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_QL75_UX380_CR0,4,380,562_.jpg	1999-03-31 00:00:00
+15	John Wick	https://m.media-amazon.com/images/M/MV5BMTU2NjA1ODgzMF5BMl5BanBnXkFtZTgwMTM2MTI4MjE@._V1_QL75_UX380_CR0,4,380,562_.jpg	2014-10-24 00:00:00
+16	Jumanji: Welcome to the Jungle	https://m.media-amazon.com/images/M/MV5BODQ0NDhjYWItYTMxZi00NTk2LWIzNDEtOWZiYWYxZjc2MTgxXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_QL75_UX380_CR0,0,380,562_.jpg	2017-12-20 00:00:00
+17	Moana	https://m.media-amazon.com/images/M/MV5BMjI4MzU5NTExNF5BMl5BanBnXkFtZTgwNzY1MTEwMDI@._V1_QL75_UX380_CR0,0,380,562_.jpg	2016-11-23 00:00:00
+18	Top Gun	https://m.media-amazon.com/images/M/MV5BZjQxYTA3ODItNzgxMy00N2Y2LWJlZGMtMTRlM2JkZjI1ZDhhXkEyXkFqcGdeQXVyNDk3NzU2MTQ@._V1_QL75_UX380_CR0,12,380,562_.jpg	1986-05-16 00:00:00
+19	Jerry Maguire	https://m.media-amazon.com/images/M/MV5BYTM0ZWNmZTUtOTVkZS00MTZiLTg3M2QtZjA0Y2RmOWM1NWEyXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_QL75_UX380_CR0,0,380,562_.jpg	1996-12-13 00:00:00
+20	Rocky	https://m.media-amazon.com/images/M/MV5BNTBkMjg2MjYtYTZjOS00ODQ0LTg0MDEtM2FiNmJmOGU1NGEwXkEyXkFqcGdeQXVyMjUzOTY1NTc@._V1_QL75_UX380_CR0,8,380,562_.jpg	1976-12-03 00:00:00
+21	The Wonder	https://m.media-amazon.com/images/M/MV5BNDBmNzIwY2QtMjZhOC00YzlhLWIwNjMtZDdkZjY3OWUzZDI4XkEyXkFqcGdeQXVyMTAyMjQ3NzQ1._V1_QL75_UX380_CR0,0,380,562_.jpg	2022-12-16 00:00:00
+2	Pretty Woman	https://upload.wikimedia.org/wikipedia/en/b/b6/Pretty_woman_movie.jpg	2022-11-20 00:00:00
+10	Ticket to Paradise	https://m.media-amazon.com/images/M/MV5BMWE0MmEwMWUtZjRjOC00YzE3LWI2MjctNjc3NWQ0YTVmNDQ4XkEyXkFqcGdeQXVyODk4OTc3MTY@._V1_QL75_UX380_CR0,20,380,562_.jpg	2022-10-21 00:00:00
+23	Glass Onion: A Knives Out Mystery	https://m.media-amazon.com/images/M/MV5BYmZlZDZkZjYtNzE5Mi00ODFhLTk2OTgtZWVmODBiZTI4NGFiXkEyXkFqcGdeQXVyMTE5MTg5NDIw._V1_QL75_UX380_CR0,4,380,562_.jpg	2022-12-23 00:00:00
+\.
+
+
+--
+-- Name: actors_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.actors_id_seq', 24, true);
+
+
+--
+-- Name: castings_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.castings_id_seq', 60, true);
+
+
+--
+-- Name: movies_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.movies_id_seq', 23, true);
+
+
+--
+-- Name: actors actors_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.actors
+    ADD CONSTRAINT actors_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: alembic_version alembic_version_pkc; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.alembic_version
+    ADD CONSTRAINT alembic_version_pkc PRIMARY KEY (version_num);
+
+
+--
+-- Name: castings castings_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.castings
+    ADD CONSTRAINT castings_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: movies movies_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.movies
+    ADD CONSTRAINT movies_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: castings castings_actor_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.castings
+    ADD CONSTRAINT castings_actor_id_fkey FOREIGN KEY (actor_id) REFERENCES public.actors(id);
+
+
+--
+-- Name: castings castings_movie_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.castings
+    ADD CONSTRAINT castings_movie_id_fkey FOREIGN KEY (movie_id) REFERENCES public.movies(id);
+
+
+--
+-- PostgreSQL database dump complete
+--
+

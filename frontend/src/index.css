@@ -1,0 +1,167 @@
+/* Use a more-intuitive box-sizing model. */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin all elements */
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  font-family: 'Nunito', sans-serif;
+  font-size: 1em;
+}
+
+/* Prevent adjustments of font size after orientation changes in iOS */
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+/* Allow percentage-based heights */
+html,
+body {
+  height: 100%;
+  background-color: #0f0f0f;
+  color: white;
+}
+
+/* Typographic tweaks */
+body {
+  line-height: calc(1em + 0.5rem);
+  text-rendering: optimizeSpeed;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Avoid text overflows */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+  color: white;
+}
+
+/* Remove list styles on ul, ol elements with a list role */
+ul,
+ol {
+  list-style: none;
+}
+
+/* Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg,
+iframe {
+  display: block;
+  max-width: 100%;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Single taps are dispatched immediately on clickable elements */
+a,
+area,
+button,
+input,
+label,
+select,
+summary,
+textarea,
+[tabindex] {
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+}
+
+/* Remove text decoration from links */
+
+a {
+    text-decoration: none;
+    color: white;
+    opacity: 0.7;
+    transition: 0.3s;
+}
+
+a:hover {
+    opacity: 1;
+}
+
+/* Standard paragraphs */
+p {
+    overflow-wrap: break-word;
+    color: #a9a9a9;
+}
+
+/* Remove built-in form typography styles */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove input border on focus */
+input:focus,
+textarea:focus,
+select:focus {
+  border: none;
+  outline: none;
+  box-shadow: none!important;
+}
+
+/* Add the correct font weight in Chrome, Edge, and Safari. */
+strong {
+  font-weight: bolder;
+}
+
+/* Correct the inability to style buttons in iOS and Safari. */
+:where(button, [type='button' i], [type='reset' i], [type='submit' i]) {
+  -webkit-appearance: button;
+}
+
+/* Correct small font size in all browsers. */
+small {
+  font-size: 80%;
+}
+
+/* Table adjustments */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  caption-side: bottom;
+}
+
+/* revert the 'white-space' property for textarea elements on Safari */
+textarea {
+  white-space: revert;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html:focus-within {
+    scroll-behavior: smooth;
+  }
+}
+
+/*  Remove all animations, transitions and smooth scroll */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

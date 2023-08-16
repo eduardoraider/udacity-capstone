@@ -1,0 +1,29 @@
+h3 {
+    margin-top: 0.5rem;
+}
+
+.movies {
+    width: 220px;
+    margin-bottom: 30px;
+}
+
+.movies img {
+    width: 220px;
+    height: 330px;
+    object-fit: cover;
+}
+
+h4 {
+    margin-top: 0.3rem;
+}
+
+.mini.movies {
+    width: 120px;
+    margin-bottom: 20px;
+}
+
+.mini.movies img {
+    width: 120px;
+    height: 177px;
+    object-fit: cover;
+}

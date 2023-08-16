@@ -1,0 +1,32 @@
+h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+form {
+    max-width: 500px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.form-control {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+}
+
+.form-control label {
+    margin-bottom: 0.5rem;
+}
+
+.form-control #movie-title {
+    text-transform: capitalize;
+}
+
+.form-control input {
+    min-width: 380px;
+    border: none;
+    border-radius: 0.3rem;
+    font-size: 0.75em;
+    padding: 6px 12px;
+}

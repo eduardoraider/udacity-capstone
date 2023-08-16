@@ -1,0 +1,30 @@
+h3 {
+    margin-top: 0.5rem;
+}
+
+.actors {
+    width: 220px;
+    margin-bottom: 30px;
+}
+
+.actors img {
+    width: 220px;
+    height: 330px;
+    object-fit: cover;
+}
+
+h4 {
+    margin-top: 0.3rem;
+}
+
+.mini.actors {
+    width: 120px;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.mini.actors img {
+    width: 120px;
+    height: 177px;
+    object-fit: cover;
+}

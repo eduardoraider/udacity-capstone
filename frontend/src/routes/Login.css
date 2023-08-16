@@ -1,0 +1,36 @@
+.login-container .left-panel {
+    width: 40%;
+    height: 100vh;
+    padding-top: 20%;
+    display: flex;
+    align-content: first baseline;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login-container .left-panel img {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto;
+}
+
+.login-container .right-panel {
+    height: 100vh;
+    width: 60%;
+    background-image: url('../assets/images/bg-login.png');
+    background-size: cover;
+    background-position: initial;
+}
+
+.btn.btn-login {
+    background-color: #f7b500;
+    color: black;
+    font-weight: 500;
+    font-size: 1em;
+    padding: 0.5rem 5rem;
+  }
+  
+.btn.btn-login:hover {
+background-color: #d8a20b;
+color: black;
+}
